@@ -18,6 +18,7 @@ const categoriesContr = require("./controllers/categories");
 //controllers Home article
 const ArticleContr = require("./controllers/article");
 // group page home
+app.get("/", "hello word");
 app.group("/api/categories/", router => {
   //categories
   router.get("/", categoriesContr.index);

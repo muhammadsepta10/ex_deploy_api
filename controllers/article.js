@@ -23,7 +23,6 @@ exports.indexLimit = (req, res) => {
 };
 exports.index = (req, res) => {
   Articles.findAll({
-    limit: 10,
     include: [
       {
         model: categories,
