@@ -17,6 +17,10 @@ app.use(function(req, res, next) {
 const categoriesContr = require("./controllers/categories");
 //controllers Home article
 const ArticleContr = require("./controllers/article");
+// controller comments
+const commentsContr = require("./controllers/comments");
+// controller users
+const usersContr = require("./controllers/user");
 // group page home
 app.get("/", (req, res) => {
   res.send("hello world");
@@ -32,6 +36,21 @@ app.group("/api/articles", router => {
   router.get("/limit", ArticleContr.indexLimit);
   router.get("/article/:id", ArticleContr.show);
   router.get("/category/:id", ArticleContr.Categories);
+  router.get("/releated/:id", ArticleContr.releated);
+  router.get("/byperson/:id", ArticleContr.articleByPerson);
+  router.post("/create", ArticleContr.input);
+  router.put("/edit/:id", ArticleContr.edit);
+  router.delete("/delete/:id", ArticleContr.delete);
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}!`));
+// end point comments
+app.group("/api/comments", router => {
+  router.get("/:id", commentsContr.comments);
+  router.post("/input/:id", commentsContr.created);
+});
+
+app.group("/api/users", router => {
+  router.post("/register", usersContr.register);
+});
+
+app.listen(port);
