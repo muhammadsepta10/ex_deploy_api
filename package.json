@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/muhammadsepta10/MediumAPI_Moch-syaiful-ulum-d.s_DW13NEHXB.git#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-group-routes": "^1.1.0",
     "express-jwt": "^5.3.1",
     "funding": "^1.0.9",
